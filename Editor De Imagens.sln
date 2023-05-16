@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Editor De Imagens", "Editor De Imagens\Editor De Imagens.csproj", "{B49199DE-E406-42E7-B230-DBB5EE0B6C56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlugInApi", "PlugInApi\PlugInApi.csproj", "{081417FB-1D2D-4A0A-A223-8679C09D87C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoPlugIn", "DemoPlugIn\DemoPlugIn.csproj", "{313867B1-F4C4-4AD7-90C6-9A99E5CDE980}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Arquivos", "Arquivos", "{773CCBCB-D976-4E4D-ADFE-CD2E8961EDD4}"
+	ProjectSection(SolutionItems) = preProject
+		Exemplo.txt = Exemplo.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B49199DE-E406-42E7-B230-DBB5EE0B6C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B49199DE-E406-42E7-B230-DBB5EE0B6C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B49199DE-E406-42E7-B230-DBB5EE0B6C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B49199DE-E406-42E7-B230-DBB5EE0B6C56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{081417FB-1D2D-4A0A-A223-8679C09D87C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{081417FB-1D2D-4A0A-A223-8679C09D87C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{081417FB-1D2D-4A0A-A223-8679C09D87C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{081417FB-1D2D-4A0A-A223-8679C09D87C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{313867B1-F4C4-4AD7-90C6-9A99E5CDE980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{313867B1-F4C4-4AD7-90C6-9A99E5CDE980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{313867B1-F4C4-4AD7-90C6-9A99E5CDE980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{313867B1-F4C4-4AD7-90C6-9A99E5CDE980}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5207FB43-0CA1-437B-A442-B277ED09EC4B}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://odairjgn.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Editor\u0020De\u0020Imagens\\Editor\u0020De\u0020Imagens.csproj
+		SccProjectName1 = Editor\u0020De\u0020Imagens
+		SccLocalPath1 = Editor\u0020De\u0020Imagens
+		SccProjectUniqueName2 = PlugInApi\\PlugInApi.csproj
+		SccProjectName2 = PlugInApi
+		SccLocalPath2 = PlugInApi
+		SccProjectUniqueName3 = DemoPlugIn\\DemoPlugIn.csproj
+		SccProjectName3 = DemoPlugIn
+		SccLocalPath3 = DemoPlugIn
+	EndGlobalSection
+EndGlobal

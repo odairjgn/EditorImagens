@@ -1,0 +1,52 @@
+using System;
+using System.CodeDom.Compiler;
+using System.Text;
+using Microsoft.CSharp;
+
+namespace ConsoleApp9
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            CSharpCodeProvider provider = new CSharpCodeProvider();
+            CompilerParameters parameters = new CompilerParameters();
+
+            parameters.ReferencedAssemblies.Add("System.dll");
+            parameters.GenerateInMemory = true;
+            parameters.GenerateExecutable = false;
+
+            var code = new StringBuilder();
+            code.AppendLine("using System;");
+            code.AppendLine("public class Teste{");
+            code.AppendLine("public int X {get; set;}");
+            code.AppendLine("public void Escrever(){ Console.WriteLine(\"Numero digitado: \" + X); }");
+            code.AppendLine("}");
+
+            var results = provider.CompileAssemblyFromSource(parameters, code.ToString());
+
+            if (results.Errors.HasErrors)
+            {
+                StringBuilder sb = new StringBuilder();
+
+                foreach (CompilerError error in results.Errors)
+                {
+                    sb.AppendLine($"Error ({error.ErrorNumber}): {error.ErrorText}");
+                }
+
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(sb.ToString());
+            }
+            else
+            {
+                var assembly = results.CompiledAssembly;
+                Type objetotype = assembly.GetType("Teste");
+                var objeto = Activator.CreateInstance(objetotype);
+                objetotype.GetProperty("X").SetValue(objeto, 666);
+                objetotype.GetMethod("Escrever").Invoke(objeto, null);
+            }
+
+            Console.ReadKey();
+        }
+    }
+}

@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B49199DE-E406-42E7-B230-DBB5EE0B6C56}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Editor_De_Imagens</RootNamespace>
+    <AssemblyName>Editor De Imagens</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>86B9A67D88584D7622A76458D627F6C8BD070B11</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Editor De Imagens_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Oxygen-Icons.org-Oxygen-Actions-fill-color.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aplicacao\InterpretadorDeScripts.cs" />
+    <Compile Include="Classes\Acoes\Acao.cs" />
+    <Compile Include="Classes\Acoes\Brilho.cs" />
+    <Compile Include="Classes\Acoes\Contraste.cs" />
+    <Compile Include="Classes\Acoes\CopiarParaAreaDeTransferencia.cs" />
+    <Compile Include="Classes\Acoes\Desfazer.cs" />
+    <Compile Include="Classes\Acoes\FiltroDeCor.cs" />
+    <Compile Include="Classes\Acoes\Gamma.cs" />
+    <Compile Include="Classes\Acoes\Girar.cs" />
+    <Compile Include="Classes\Acoes\Imprimir.cs" />
+    <Compile Include="Classes\Acoes\InserirForma.cs" />
+    <Compile Include="Classes\Acoes\InserirImagem.cs" />
+    <Compile Include="Classes\Acoes\InserirTexto.cs" />
+    <Compile Include="Classes\Acoes\Inverter.cs" />
+    <Compile Include="Classes\Acoes\Log.cs" />
+    <Compile Include="Classes\Acoes\Negativo.cs" />
+    <Compile Include="Classes\Acoes\Redimencionar.cs" />
+    <Compile Include="Classes\Acoes\Refazer.cs" />
+    <Compile Include="Classes\Acoes\Salvar.cs" />
+    <Compile Include="Classes\Enumeradores\Zoom.cs" />
+    <Compile Include="Classes\FilaDeAcoes.cs" />
+    <Compile Include="Classes\Historico.cs" />
+    <Compile Include="Classes\ItemHistorico.cs" />
+    <Compile Include="Classes\Matriz.cs" />
+    <Compile Include="Classes\MeuScript.cs" />
+    <Compile Include="Classes\Script.cs" />
+    <Compile Include="Classes\Trabalho.cs" />
+    <Compile Include="Componentes\FiltroButtom.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componentes\ToolStripPlugIn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Delegates\Delegates.cs" />
+    <Compile Include="Formularios\Ferramentas\frmBrilho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmBrilho.Designer.cs">
+      <DependentUpon>frmBrilho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmContraste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmContraste.Designer.cs">
+      <DependentUpon>frmContraste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmDesfoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmDesfoque.Designer.cs">
+      <DependentUpon>frmDesfoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmFiltroPersonalizado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmFiltroPersonalizado.Designer.cs">
+      <DependentUpon>frmFiltroPersonalizado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmGaleriaFiltros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmGaleriaFiltros.Designer.cs">
+      <DependentUpon>frmGaleriaFiltros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmGamma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmGamma.Designer.cs">
+      <DependentUpon>frmGamma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmGirar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmGirar.Designer.cs">
+      <DependentUpon>frmGirar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmInserirTexto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmInserirTexto.Designer.cs">
+      <DependentUpon>frmInserirTexto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmInserirForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmInserirForma.Designer.cs">
+      <DependentUpon>frmInserirForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmInserirImagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmInserirImagem.Designer.cs">
+      <DependentUpon>frmInserirImagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmPixelizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmPixelizar.Designer.cs">
+      <DependentUpon>frmPixelizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmRecorte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmRecorte.Designer.cs">
+      <DependentUpon>frmRecorte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmRedimencionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ferramentas\frmRedimencionar.Designer.cs">
+      <DependentUpon>frmRedimencionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RelatoriosDeErros\frmErroCritico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RelatoriosDeErros\frmErroCritico.Designer.cs">
+      <DependentUpon>frmErroCritico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Tarefas\frmFragmentar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Tarefas\frmFragmentar.Designer.cs">
+      <DependentUpon>frmFragmentar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicos\GestorDeCalculo.cs" />
+    <Compile Include="Servicos\GestorDeImagens.cs" />
+    <Compile Include="Servicos\GestorDePlugIns.cs" />
+    <Compile Include="Servicos\GestorXML.cs" />
+    <Compile Include="Servicos\Utils.cs" />
+    <EmbeddedResource Include="Formularios\Ferramentas\frmBrilho.resx">
+      <DependentUpon>frmBrilho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ferramentas\frmContraste.resx">
+      <DependentUpon>frmContraste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ferramentas\frmDesfoque.resx">
+      <DependentUpon>frmDesfoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ferramentas\frmFiltroPersonalizado.resx">
+      <DependentUpon>frmFiltroPersonalizado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ferramentas\frmGaleriaFiltros.resx">
+      <DependentUpon>frmGaleriaFiltros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ferramentas\frmGamma.resx">
+      <DependentUpon>frmGamma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ferramentas\frmGirar.resx">
+      <DependentUpon>frmGirar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ferramentas\frmInserirTexto.resx">
+      <DependentUpon>frmInserirTexto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ferramentas\frmInserirForma.resx">
+      <DependentUpon>frmInserirForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ferramentas\frmInserirImagem.resx">
+      <DependentUpon>frmInserirImagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ferramentas\frmPixelizar.resx">
+      <DependentUpon>frmPixelizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ferramentas\frmRecorte.resx">
+      <DependentUpon>frmRecorte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ferramentas\frmRedimencionar.resx">
+      <DependentUpon>frmRedimencionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RelatoriosDeErros\frmErroCritico.resx">
+      <DependentUpon>frmErroCritico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Tarefas\frmFragmentar.resx">
+      <DependentUpon>frmFragmentar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Filtros.zip" />
+    <None Include="Resources\transparencia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Negativo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Girar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inverter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vertical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Horizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Redmencionar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gamma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contraste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Brilho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FiltroCor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FiltroCorR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FiltroCorG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FiltroCorB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EscalaCinza.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Desfoque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cortar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Filtro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Abrir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salvar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imprimir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copiar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Desfazer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refazer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Texto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Alecive-Flatwoken-Apps-Color-B.ico" />
+    <Content Include="Oxygen-Icons.org-Oxygen-Actions-fill-color.ico" />
+    <None Include="Resources\ZoomIn.png" />
+    <None Include="Resources\Zoom.png" />
+    <None Include="Resources\ZoomOut.png" />
+    <None Include="Resources\ZoomOut1.png" />
+    <None Include="Resources\exemplo.jpg" />
+    <None Include="Resources\galeria.png" />
+    <None Include="Resources\EditorFiltro.png" />
+    <None Include="Resources\Fragmentar.png" />
+    <None Include="Resources\FiltroEditor.png" />
+    <None Include="Resources\loading.gif" />
+    <None Include="Resources\SubstituirCor.png" />
+    <None Include="Resources\DecomporGif.png" />
+    <None Include="Resources\Transparente.png" />
+    <None Include="Resources\Pixelizar.png" />
+    <None Include="Resources\DefaultScript.txt" />
+    <Content Include="ScriptIcon.ico" />
+    <None Include="Resources\Help.png" />
+    <None Include="Resources\Debug.png" />
+    <None Include="Resources\NovoArquivo.png" />
+    <None Include="Resources\EditorScript.png" />
+    <None Include="Resources\GravarMacro.png" />
+    <None Include="Resources\ExecutarBatch.png" />
+    <None Include="Resources\ExecutarScript.png" />
+    <None Include="Resources\Sintax.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <FileAssociation Include=".batimg">
+      <Visible>False</Visible>
+      <Description>Script de passos de edição de imagem</Description>
+      <Progid>Editor de Imagens</Progid>
+      <DefaultIcon>ScriptIcon.ico</DefaultIcon>
+    </FileAssociation>
+    <FileAssociation Include=".xmlmat">
+      <Visible>False</Visible>
+      <Description>Matriz de Cores</Description>
+      <Progid>Editor de Imagens</Progid>
+      <DefaultIcon>Alecive-Flatwoken-Apps-Color-B.ico</DefaultIcon>
+    </FileAssociation>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PlugInApi\PlugInApi.csproj">
+      <Project>{081417fb-1d2d-4a0a-a223-8679c09d87c5}</Project>
+      <Name>PlugInApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

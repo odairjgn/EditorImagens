@@ -1,0 +1,24 @@
+<!--<doc> 
+	<brackets left="&lt;" right="&gt;" />
+	<style name="Maroon" color="Maroon" fontStyle="Bold,Italic" /> 
+	<style name="Blue" color="Blue"/> 
+	<style name="Red" color="Red" backColor="#f5f5e5" /> 
+	<rule style="Blue">&lt;|/&gt;|&lt;/|&gt;</rule>
+	<rule style="Maroon">&lt;(?&lt;range&gt;[!\w\d]+)</rule> 
+	<rule style="Maroon">&lt;/(?&lt;range&gt;[\w\d]+)&gt;</rule> 
+	<rule style="Red" options="Multiline">(?&lt;range&gt;\S+?)='[^']* '|(?&lt;range&gt;\S+)="[^"]*"|(?&lt;range&gt;\S+)=\S+</rule> 
+	<folding start="&lt;div" finish="&lt;/div&gt;" options="IgnoreCase"/> 
+</doc>-->
+<doc>
+  <style name="Comentarios" color="Green" fontStyle="Italic" />
+  <rule style ="Comentarios" options="Multiline">//.*$</rule>
+  <style name="Texto" color="Red" fontStyle="Bold" />
+  <rule style="Texto">&quot;(?&lt;range&gt;[!\w\d]+)</rule> 
+	<rule style="Texto">&quot;/(?&lt;range&gt;[\w\d]+)&quot;</rule> 
+  <style name="Numeros" color="Purple" fontStyle="Bold" />
+  <rule style="Numeros">\b\d\b</rule> 
+  <style name="Keys" color="Blue" backColor="#f5f5e5" fontStyle="Bold" />
+  <rule style="Keys">(?i)\b(save|print|clipboard|undo|redo|text|form|image|negative|rotate|flip|resize|contrast|brightness|gamma|colorfilter|grayscale|blur|crop|apply|log)\b</rule>
+  <style name="Param" color="Gray" fontStyle="Bold" />
+  <rule style="Param">(?i)\b(default|printer)\b</rule>
+</doc>
